@@ -1,0 +1,4 @@
+fastapi[all]
+pytube
+moviepy==1.0.3
+yt-dlp

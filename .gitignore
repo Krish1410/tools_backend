@@ -1,0 +1,5 @@
+/videos
+videos/
+__pycache__/
+.env
+.venv/

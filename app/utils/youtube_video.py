@@ -4,6 +4,8 @@ import yt_dlp
 from fastapi import HTTPException
 from moviepy.editor import VideoFileClip, AudioFileClip
 
+cookies_path = "youtube_cookies.txt"  # Path to the cookies file
+
 
 def list_video_formats_with_size(url: str):
     ydl_opts = {
@@ -137,7 +139,9 @@ def download_video_audio_separately(url, video_format, audio_format, output_name
 def download_video(url, format_id, video_id):
     ydl_opts = {
         "format": format_id,
-        "outtmpl": "videos/" + video_id + "_%(title)s.%(ext)s",  # Output file template
+        "outtmpl": "videos/" + video_id + "_%(title)s.%(ext)s",
+        "cookiefile": cookies_path,  # Specify the path to the cookies file
+        # Output file template
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         try:

@@ -140,7 +140,7 @@ def download_video(url, format_id, video_id):
     ydl_opts = {
         "format": format_id,
         "outtmpl": "videos/" + video_id + "_%(title)s.%(ext)s",
-        "cookiefile": cookies_path,  # Specify the path to the cookies file
+        "cookies": cookies_path,  # Specify the path to the cookies file
         # Output file template
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:

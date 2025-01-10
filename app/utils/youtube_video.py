@@ -4,7 +4,7 @@ import yt_dlp
 from fastapi import HTTPException
 from moviepy.editor import VideoFileClip, AudioFileClip
 
-cookies_path = "youtube_cookies.txt"  # Path to the cookies file
+cookies_path = "cookies.txt"  # Path to the cookies file
 
 
 def list_video_formats_with_size(url: str):
